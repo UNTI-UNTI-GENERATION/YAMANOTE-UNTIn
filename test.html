@@ -5,18 +5,38 @@
 </head>
 <body>
   <div id="content" style="display:flex">
-  <h1>FROM</h1>
-  <select class="stationsPulldown"></select>
-  <h1>TO</h1>
-  <select class="stationsPulldown"></select>
+  <p>FROM</p>
+  <select id="stStart"></select>
+  <p>TO</p>
+  <select id="stDest"></select>
   <script type="text/javascript">
-    var i = 0;
+
+  function getValue(idname) {
+    var obj = document.getElementById(idname);
+    var stationNum = obj.value;
+    return stationNum;
+  }
+
+  function getFee() {
+    var start = getValue("stStart");
+    var dest = getValue("stDest");
+    var fee = 0;
+    var feeUnit = 160;
+    var distance = Math.abs(((dest-start)>(length/2))*length-(dest-start));
+    console.log("かかる費用：" + distance*feeUnit + "\n" + distance + "\ndest-start = " + (dest-start) + "\n");
+  }
+
+
     var options = "";
     var length = stations.length
     for (var i = 0; i < length; i++) {
-      options += '<option>'+stations[i].name+'</option>';
+      options += '<option value = ' + stations[i].id + '>' + stations[i].name + '</option>';
     }
-    document.getElementsByClassName("stationsPulldown").innerHTML = options;
-  </script>
+    document.getElementById("stStart").innerHTML = options;
+    document.getElementById("stDest").innerHTML = options;
+
+
+    </script>
+  <input type="button" value="ボタン" onclick="getFee();">
 </body>
 </html>
