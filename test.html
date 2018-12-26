@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="Stationlist.js"></script>
+</head>
+<body>
+  <div id="content" style="display:flex">
+  <h1>FROM</h1>
+  <select class="stationsPulldown"></select>
+  <h1>TO</h1>
+  <select class="stationsPulldown"></select>
+  <script type="text/javascript">
+    var i = 0;
+    var options = "";
+    var length = stations.length
+    for (var i = 0; i < length; i++) {
+      options += '<option>'+stations[i].name+'</option>';
+    }
+    document.getElementsByClassName("stationsPulldown").innerHTML = options;
+  </script>
+</body>
+</html>

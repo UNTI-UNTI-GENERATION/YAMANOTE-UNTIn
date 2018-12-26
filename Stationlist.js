@@ -1,6 +1,6 @@
-var stations = [
+﻿var stations = [
 {"id":1,"name":"大崎"},
-{"id":2,"name":"五反田"},,
+{"id":2,"name":"五反田"},
 {"id":3,"name":"目黒"},
 {"id":4,"name":"恵比寿"},
 {"id":5,"name":"渋谷"},
